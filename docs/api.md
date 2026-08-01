@@ -10,3 +10,4 @@
 | GET | `/api/shopfloor/dashboard` | 视觉质检员工作台 |
 | POST | `/api/shopfloor/work-orders/{id}/reports` | 提交缺陷人工复核 |
 | POST | `/api/shopfloor/ai-preview` | 调用可替换视觉 AI Provider |
+| POST | `/api/shopfloor/visual-disposition` | 根据缺陷置信度与安全等级生成放行处置结论 |

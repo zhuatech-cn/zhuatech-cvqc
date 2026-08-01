@@ -16,6 +16,8 @@ ZhuaTech CVQC 是知华科技（上海如静知华信息科技有限公司）面
 
 ![视觉质检员移动工作台](docs/images/cvqc-review-h5.png)
 
+缺陷处置决策新增安全关键件规则：综合模型置信度、缺陷面积、重复次数与安全属性，自动建议停线、人工复核或放行，同时给出风险等级和扩大抽样数量；最终放行权仍属于质量人员。
+
 ### 技术与功能
 
 - Java 21 / Spring Boot / Spring Security / JWT / JPA / Flyway
