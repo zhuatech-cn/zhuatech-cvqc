@@ -44,3 +44,7 @@ cd frontend && npm install && npm run dev:demo
 更多资料：[架构](docs/architecture.md) · [数据库](docs/database.md) · [接口](docs/api.md) · [部署](deploy/README.md)
 
 SEO：工业视觉质检源码、AI 质检系统、缺陷检测平台、视觉模型运营、Java 视觉质检、Vue 质量系统、知华科技。
+
+## 动态质检抽样
+
+新增 `POST /api/cvqc/insights/inspection-sampling`，根据批量、历史缺陷率、视觉模型置信度、工艺漂移和产品关键性生成抽样数量，支持 `NORMAL`、`TIGHTENED` 和 `FULL_INSPECTION`。
