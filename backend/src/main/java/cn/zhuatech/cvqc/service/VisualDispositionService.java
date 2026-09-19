@@ -7,9 +7,16 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.PositiveOrZero;
 import org.springframework.stereotype.Service;
 
-/** 根据视觉置信度、缺陷面积和安全属性生成质检处置结论。 */
+/**
+ * 根据视觉置信度、缺陷面积和安全属性生成质检处置结论。
+ *
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class VisualDispositionService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public DispositionResult decide(DispositionRequest request) {
         int riskScore = Math.min(100,
             (int) Math.round(request.confidence() * 45)
@@ -24,6 +31,9 @@ public class VisualDispositionService {
             "STOP_LINE".equals(disposition) ? "暂停产线并通知质量负责人" : "MANUAL_REVIEW".equals(disposition) ? "扩大抽样并由质检员复判" : "记录结果并继续在线检测");
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record DispositionRequest(
         @NotBlank(message = "请输入缺陷类型") String defectType,
         @DecimalMin("0.0") @DecimalMax("1.0") double confidence,
@@ -32,5 +42,8 @@ public class VisualDispositionService {
         @PositiveOrZero int repeatCount
     ) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record DispositionResult(String disposition, String severity, int riskScore, int sampleExpansion, String nextAction) {}
 }
